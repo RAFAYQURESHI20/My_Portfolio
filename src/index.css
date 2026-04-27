@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 16% 96%;
+    --foreground: 215 18% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 18% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 18% 17%;
+
+    --primary: 213 90% 52%;
+    --primary-foreground: 210 16% 98%;
+
+    --secondary: 210 16% 94%;
+    --secondary-foreground: 215 18% 17%;
+
+    --muted: 210 18% 92%;
+    --muted-foreground: 215 18% 55%;
+
+    --accent: 210 80% 56%;
+    --accent-foreground: 210 16% 98%;
+
+    --destructive: 348 84% 58%;
+    --destructive-foreground: 210 16% 98%;
+
+    --border: 210 16% 88%;
+    --input: 210 16% 96%;
+    --ring: 213 90% 52%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(213, 90%, 52%), hsl(210, 75%, 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(212, 90%, 46%), hsl(213, 70%, 58%));
+    --gradient-hero: linear-gradient(180deg, hsl(210, 16%, 96%) 0%, hsl(210, 18%, 92%) 100%);
+    --glass-bg: hsla(210, 16%, 98%, 0.82);
+    --glass-border: hsla(215, 18%, 75%, 0.28);
+  }
+
+  .dark {
+    --background: 215 18% 8%;
+    --foreground: 210 20% 96%;
+
+    --card: 215 18% 12%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 215 18% 12%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 213 90% 58%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 216 20% 12%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 216 20% 16%;
+    --muted-foreground: 215 18% 62%;
+
+    --accent: 210 80% 56%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 348 84% 58%;
+    --destructive-foreground: 220 20% 8%;
+
+    --border: 216 20% 16%;
+    --input: 216 20% 16%;
+    --ring: 213 90% 58%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(212, 90%, 58%), hsl(210, 75%, 62%));
+    --gradient-accent: linear-gradient(135deg, hsl(212, 90%, 46%), hsl(213, 75%, 56%));
+    --gradient-hero: linear-gradient(180deg, hsl(215, 18%, 8%) 0%, hsl(217, 18%, 12%) 100%);
+    --glass-bg: hsla(215, 18%, 12%, 0.72);
+    --glass-border: hsla(210, 20%, 96%, 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background: hsl(175, 80%, 50%, 0.3);
+    color: hsl(210, 20%, 95%);
+  }
+}
+
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow {
+    box-shadow: 0 0 30px hsla(175, 80%, 50%, 0.15), 0 0 60px hsla(175, 80%, 50%, 0.05);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px hsla(175, 80%, 50%, 0.3);
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 py-24 md:py-32;
+  }
+
+  .heading-xl {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none;
+  }
+
+  .heading-lg {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight;
+  }
+
+  .heading-md {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220, 20%, 4%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(220, 15%, 20%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(175, 80%, 50%, 0.5);
+}
+
