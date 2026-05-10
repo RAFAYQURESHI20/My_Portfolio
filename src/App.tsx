@@ -14,7 +14,9 @@ import Experience from "./pages/Experience.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import KhedmaAI from "./pages/KhedmaAI.tsx";
 import AuraStrategy from "./pages/AuraStrategy.tsx";
+import SmartAppointmentAutomation from "./pages/SmartAppointmentAutomation.tsx";
 import Chatbot from "./components/Chatbot.tsx";
+
 
 const queryClient = new QueryClient();
 
@@ -46,7 +48,9 @@ const AnimatedRoutes = () => {
         <Route path="/certificates" element={<Certificates />} />
         <Route path="/khedma-ai" element={<KhedmaAI />} />
         <Route path="/aura-strategy" element={<AuraStrategy />} />
+        <Route path="/projects/smart-appointment-automation" element={<SmartAppointmentAutomation />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
