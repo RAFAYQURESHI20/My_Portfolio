@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function FeaturedProjectCard() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
@@ -131,7 +131,7 @@ function FeaturedProjectCard() {
 
 function AuraStrategyCard() {
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
@@ -263,9 +263,152 @@ function AuraStrategyCard() {
   );
 }
 
+function N8nRagAgentCard() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 100, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="col-span-full mb-12 relative"
+    >
+      <motion.div
+        className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+        animate={{ opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-card via-card/95 to-card/90 border border-primary/20 backdrop-blur-sm">
+        <motion.div
+          className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{ padding: '1px' }}
+        >
+          <div className="w-full h-full rounded-3xl bg-card" />
+        </motion.div>
+
+        <div className="relative p-8 md:p-12">
+          <div className="flex items-center gap-4 mb-6">
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={isInView ? { scale: 1, rotate: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
+              className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl shadow-lg relative overflow-hidden"
+            >
+              <span className="relative z-10">🧠</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 blur-xl"
+                animate={{ opacity: [0.2, 0.6, 0.2] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </motion.div>
+
+            <div>
+              <motion.h3
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+              >
+                n8n RAG Agent
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="text-muted-foreground font-medium"
+              >
+                Google Gemini • Supabase • Postgres Memory
+              </motion.p>
+            </div>
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl"
+          >
+            A Retrieval-Augmented Generation conversational agent orchestrated in n8n:
+            ingest documents, generate embeddings, retrieve semantic context from Supabase,
+            and maintain persistent chat memory with PostgreSQL.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex flex-wrap gap-3 mb-8"
+          >
+            {[
+              'n8n',
+              'RAG Agent',
+              'Gemini AI',
+              'Supabase Vector',
+              'Postgres Memory',
+              'Embeddings',
+              'PDF Ingestion',
+            ].map((tag, i) => (
+              <motion.span
+                key={tag}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: 0.8 + i * 0.1, type: 'spring' }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover:bg-primary/20 transition-colors"
+              >
+                {tag}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 1 }}
+            className="flex gap-4"
+          >
+            <Link to="/projects/n8n-rag-agent">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+              >
+                <span>Explore Project</span>
+                <motion.span
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  →
+                </motion.span>
+              </motion.button>
+            </Link>
+
+            <motion.a
+              href="https://github.com/RAFAYQURESHI20/RAG-AGENT"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 border border-border text-foreground font-semibold rounded-xl hover:bg-secondary transition-all duration-300 flex items-center gap-2"
+            >
+              <span>View Code</span>
+              <span>↗</span>
+            </motion.a>
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function SmartAppointmentAutomationCard() {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+
 
   return (
     <motion.div
@@ -488,7 +631,7 @@ const projects = [
 ];
 
 function ProjectCard({ project, index }: { project: (typeof projects)[number]; index: number }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
@@ -611,7 +754,10 @@ export default function ProjectsSection() {
 
       <SmartAppointmentAutomationCard />
 
+      <N8nRagAgentCard />
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+
 
         {projects.map((project, i) => (
           <ProjectCard key={project.title} project={project} index={i} />

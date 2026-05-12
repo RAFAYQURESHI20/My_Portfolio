@@ -1,9 +1,7 @@
-# TODO
+# TODO - n8n RAG Agent integration
 
-- [ ] Fix `src/components/ProjectsSection.tsx` build errors
-  - [x] Remove duplicate `AuraStrategyCard` definition
-  - [x] Add missing `SmartAppointmentAutomationCard` component
-  - [x] Fix TypeScript props typing for `ProjectCard`
-  - [ ] Run typecheck/build/tests to confirm no errors
-
+- [ ] Add new premium Project Card (N8n RAG Agent) below Smart Appointment Automation in `src/components/ProjectsSection.tsx`
+- [ ] Create dedicated Explore Project page `src/pages/N8nRagAgent.tsx` (premium visuals + Framer Motion architecture/flow)
+- [ ] Register route `/projects/n8n-rag-agent` in `src/App.tsx`
+- [ ] Verify TypeScript/build compiles and routing works
 

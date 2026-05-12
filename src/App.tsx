@@ -15,7 +15,9 @@ import NotFound from "./pages/NotFound.tsx";
 import KhedmaAI from "./pages/KhedmaAI.tsx";
 import AuraStrategy from "./pages/AuraStrategy.tsx";
 import SmartAppointmentAutomation from "./pages/SmartAppointmentAutomation.tsx";
+import N8nRagAgent from "./pages/N8nRagAgent.tsx";
 import Chatbot from "./components/Chatbot.tsx";
+
 
 
 const queryClient = new QueryClient();
@@ -49,7 +51,9 @@ const AnimatedRoutes = () => {
         <Route path="/khedma-ai" element={<KhedmaAI />} />
         <Route path="/aura-strategy" element={<AuraStrategy />} />
         <Route path="/projects/smart-appointment-automation" element={<SmartAppointmentAutomation />} />
+        <Route path="/projects/n8n-rag-agent" element={<N8nRagAgent />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
 
         <Route path="*" element={<NotFound />} />
       </Routes>
