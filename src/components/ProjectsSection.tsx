@@ -164,14 +164,9 @@ function AuraStrategyCard() {
               initial={{ scale: 0, rotate: -180 }}
               animate={isInView ? { scale: 1, rotate: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
-              className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl shadow-lg relative overflow-hidden"
+              className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl shadow-lg"
             >
-              <span className="relative z-10">💬</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 blur-xl"
-                animate={{ opacity: [0.2, 0.6, 0.2] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              />
+              🎯
             </motion.div>
             <div>
               <motion.h3
@@ -180,7 +175,7 @@ function AuraStrategyCard() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
               >
-                Smart Appointment Automation System
+                Aura Strategy Agent
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
@@ -188,7 +183,7 @@ function AuraStrategyCard() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-muted-foreground font-medium"
               >
-                WhatsApp → Gemini → n8n → Google Scheduling
+                AI-Powered Marketing Strategy Generator
               </motion.p>
             </div>
           </div>
@@ -199,8 +194,8 @@ function AuraStrategyCard() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl"
           >
-            An AI-powered WhatsApp appointment booking automation system built with n8n and Google Gemini AI.
-            Transform conversations (including voice) into real-time scheduling, calendar updates, and automated confirmations.
+            An intelligent system that generates go-to-market strategies using specialized AI agents.
+            It automates research, audience segmentation, competitor analysis, and budget planning for fast product launches.
           </motion.p>
 
           <motion.div
@@ -209,7 +204,7 @@ function AuraStrategyCard() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="flex flex-wrap gap-3 mb-8"
           >
-            {['n8n', 'Gemini AI', 'WhatsApp API', 'Calendar API', 'Sheets API', 'Gmail API', 'OAuth2'].map((tag, i) => (
+            {['AI Strategy', 'FastAPI', 'Python', 'React', 'Agent Orchestration', 'Marketing'].map((tag, i) => (
               <motion.span
                 key={tag}
                 initial={{ opacity: 0, scale: 0 }}
@@ -229,7 +224,7 @@ function AuraStrategyCard() {
             transition={{ duration: 0.6, delay: 1 }}
             className="flex gap-4"
           >
-            <Link to="/projects/smart-appointment-automation">
+            <Link to="/aura-strategy">
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -246,7 +241,7 @@ function AuraStrategyCard() {
             </Link>
 
             <motion.a
-              href="https://github.com/RAFAYQURESHI20/smart-appointment-automation"
+              href="https://github.com/RAFAYQURESHI20/Aura-Strategy_Agent"
               target="_blank"
               rel="noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
